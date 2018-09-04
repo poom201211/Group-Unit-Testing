@@ -26,8 +26,12 @@ public class Statistics {
 	 * @throws IllegalArgumentException if x is empty
 	 */
 	public static double variance(double[] x) {
-		//TODO write the code
-		return 0;
+		double sum = 0;
+		for(int i = 0; i < x.length; i++){
+			sum += (x[i]*(x[i])/x.length);
+		}
+		sum -= Math.pow(average(x), 2);
+		return sum;
 	}
 	
 	/**
@@ -48,9 +52,24 @@ public class Statistics {
 	 * @return the covariance between x and y
 	 * @throws IllegalArgumentException if arrays are not same length or length is 0.
 	 */
-	public static double covariance(double[] x, double[] y) {
-		//TODO write the code
-		return 0;
+	public static double covariance(double[] x, double[] y) throws IllegalArgumentException{
+		double sum = 0.0;
+		if(x == y){
+			sum = variance(x);
+		} else {
+			for (int i = 0; i < x.length; i++) {
+				sum += (((x[i]-average(x)) * (y[i]-average(y)))/x.length);
+			}
+		}
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		double[] x = new double[1000];
+		for(int i = 0; i < x.length; i++){
+			x[i] = i;
+		}
+		System.out.println(variance(x));
 	}
 	
 }
