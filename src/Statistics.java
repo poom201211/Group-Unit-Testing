@@ -3,6 +3,8 @@ import java.util.Arrays;
 /**
  * Methods for computing some common statistics,
  * such as average, variance, and correlation.
+ *
+ * @author Supaluk Jaroensuk
  */
 public class Statistics {
 
@@ -62,14 +64,6 @@ public class Statistics {
 			}
 		}
 		return sum;
-	}
-
-	public static void main(String[] args) {
-		double[] x = new double[1000];
-		for(int i = 0; i < x.length; i++){
-			x[i] = i;
-		}
-		System.out.println(variance(x));
 	}
 	
 }
