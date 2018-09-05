@@ -10,12 +10,24 @@ public class StringUtilTest {
 
 	@Before
 	public void setUp() throws Exception {
+	
 	}
 
 	@Test
 	public void testIndexOf() {
 		String[] fruit = {"Apple", "Banana", "Grapes"};
 		assertEquals(0, StringUtil.indexOf("Apple", fruit));
+	
+	}
+	@Test
+	public void testArrayEmpty(){
+		String[] fruit = null;
+		assertNull(fruit);
+	}
+	@Test
+	public void testRepeatedName(){
+		String[] fruit ={"Apple", "Apple", "Grapes"};
+		assertEquals(0,StringUtil.indexOf("Apple", fruit));
 	}
 
 	//TODO write more tests. Test other cases.
